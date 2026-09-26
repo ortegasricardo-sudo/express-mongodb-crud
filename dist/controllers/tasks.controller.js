@@ -91,19 +91,26 @@ var renderTaskEdit = exports.renderTaskEdit = /*#__PURE__*/function () {
 }();
 var editTask = exports.editTask = /*#__PURE__*/function () {
   var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(req, res) {
-    var id;
+    var id, _t3;
     return _regenerator().w(function (_context4) {
-      while (1) switch (_context4.n) {
+      while (1) switch (_context4.p = _context4.n) {
         case 0:
+          _context4.p = 0;
           id = req.params.id;
           _context4.n = 1;
           return _Task["default"].findByIdAndUpdate(id, req.body);
         case 1:
           res.redirect("/");
+          _context4.n = 3;
+          break;
         case 2:
+          _context4.p = 2;
+          _t3 = _context4.v;
+          console.log(_t3.message);
+        case 3:
           return _context4.a(2);
       }
-    }, _callee4);
+    }, _callee4, null, [[0, 2]]);
   }));
   return function editTask(_x7, _x8) {
     return _ref4.apply(this, arguments);
@@ -111,19 +118,26 @@ var editTask = exports.editTask = /*#__PURE__*/function () {
 }();
 var deleteTask = exports.deleteTask = /*#__PURE__*/function () {
   var _ref5 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee5(req, res) {
-    var id;
+    var id, _t4;
     return _regenerator().w(function (_context5) {
-      while (1) switch (_context5.n) {
+      while (1) switch (_context5.p = _context5.n) {
         case 0:
+          _context5.p = 0;
           id = req.params.id;
           _context5.n = 1;
           return _Task["default"].findByIdAndDelete(id);
         case 1:
           res.redirect("/");
+          _context5.n = 3;
+          break;
         case 2:
+          _context5.p = 2;
+          _t4 = _context5.v;
+          console.log(_t4.message);
+        case 3:
           return _context5.a(2);
       }
-    }, _callee5);
+    }, _callee5, null, [[0, 2]]);
   }));
   return function deleteTask(_x9, _x0) {
     return _ref5.apply(this, arguments);
@@ -131,10 +145,11 @@ var deleteTask = exports.deleteTask = /*#__PURE__*/function () {
 }();
 var taskToggleDone = exports.taskToggleDone = /*#__PURE__*/function () {
   var _ref6 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee6(req, res) {
-    var id, task;
+    var id, task, _t5;
     return _regenerator().w(function (_context6) {
-      while (1) switch (_context6.n) {
+      while (1) switch (_context6.p = _context6.n) {
         case 0:
+          _context6.p = 0;
           id = req.params.id;
           _context6.n = 1;
           return _Task["default"].findById(id);
@@ -145,10 +160,16 @@ var taskToggleDone = exports.taskToggleDone = /*#__PURE__*/function () {
           return task.save();
         case 2:
           res.redirect("/");
+          _context6.n = 4;
+          break;
         case 3:
+          _context6.p = 3;
+          _t5 = _context6.v;
+          console.log(_t5.message);
+        case 4:
           return _context6.a(2);
       }
-    }, _callee6);
+    }, _callee6, null, [[0, 3]]);
   }));
   return function taskToggleDone(_x1, _x10) {
     return _ref6.apply(this, arguments);
