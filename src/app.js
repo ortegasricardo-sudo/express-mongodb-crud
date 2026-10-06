@@ -1,20 +1,22 @@
 import express from "express";
 import { engine } from "express-handlebars";
-import indexRoutes from "./routes/index.routes";
-import path from "path";
+import indexRoutes from "./routes/index.routes.js";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
 import morgan from "morgan";
 
 // initialization
 const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // settings
-app.set("views", path.join(__dirname, "views"));
+app.set("views", join(__dirname, "views"));
 
 app.engine(
   ".hbs",
   engine({
-    layoutsDir: path.join(app.get("views"), "layouts"),
-    partialsDir: path.join(app.get("views"), "partials"),
+    layoutsDir: join(app.get("views"), "layouts"),
+    partialsDir: join(app.get("views"), "partials"),
     defaultLayout: "main",
     extname: ".hbs",
   }),
@@ -30,6 +32,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(indexRoutes);
 
 // static files
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(join(__dirname, "public")));
 
 export default app;
