@@ -4,8 +4,10 @@ import indexRoutes from "./routes/index.routes";
 import path from "path";
 import morgan from "morgan";
 
+// initialization
 const app = express();
 
+// settings
 app.set("views", path.join(__dirname, "views"));
 
 app.engine(
@@ -20,11 +22,11 @@ app.engine(
 
 app.set("view engine", ".hbs");
 
-// Middlewares
+// middlewares
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 
-// Routes
+// routes
 app.use(indexRoutes);
 
 // static files
