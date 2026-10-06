@@ -1,8 +1,10 @@
 "use strict";
 
-require("./database");
-var _app = _interopRequireDefault(require("./app"));
-var _config = require("./config");
+require("./database.js");
+var _app = _interopRequireDefault(require("./app.js"));
+var _config = require("./config.js");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-_app["default"].listen(_config.PORT);
-console.log("Server on port", _config.PORT);
+// Starting the server
+_app["default"].listen(_config.PORT, function () {
+  console.log("Server is running on port", _config.PORT);
+});
