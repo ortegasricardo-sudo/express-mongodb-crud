@@ -14,7 +14,7 @@ export const createTask = async (req, res) => {
 
     res.redirect("/");
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
