@@ -50,7 +50,7 @@ var createTask = exports.createTask = /*#__PURE__*/function () {
         case 2:
           _context2.p = 2;
           _t = _context2.v;
-          console.log(_t);
+          console.log(_t.message);
         case 3:
           return _context2.a(2);
       }
