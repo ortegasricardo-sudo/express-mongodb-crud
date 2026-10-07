@@ -22,7 +22,7 @@ _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
       case 2:
         _context.p = 2;
         _t = _context.v;
-        console.error(_t);
+        console.error(_t.message);
       case 3:
         return _context.a(2);
     }
