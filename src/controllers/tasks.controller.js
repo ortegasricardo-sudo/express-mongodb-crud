@@ -10,7 +10,8 @@ export const createTask = async (req, res) => {
   try {
     const task = Task(req.body);
 
-    const taskSaved = await task.save();
+    // const taskSaved = await task.save();
+    await task.save();
 
     res.redirect("/");
   } catch (error) {
